@@ -9,7 +9,7 @@ export default defineConfig(async () => {
   const mdx = await import('@mdx-js/rollup');
 
   const baseEnv = process.env.VITE_BASE;
-  const base = baseEnv ? baseEnv.replace(/\/?$/, '/') : './';
+  const base = baseEnv ? baseEnv.replace(/\/?$/, '/') : '/';
 
   return {
     base,
