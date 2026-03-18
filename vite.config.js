@@ -8,8 +8,11 @@ import {rehypeMetaAsAttributes} from "./src/lib/rehype-meta-as-attributes";
 export default defineConfig(async () => {
   const mdx = await import('@mdx-js/rollup');
 
+  const baseEnv = process.env.VITE_BASE;
+  const base = baseEnv ? baseEnv.replace(/\/?$/, '/') : './';
+
   return {
-    base: './',
+    base,
     // This changes the output dir from dist to build
     // comment this out if that isn't relevant for your project
     build: {
